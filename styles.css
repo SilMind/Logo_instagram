@@ -1,0 +1,151 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.instagram-logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fdf497;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  animation: container-animate 2s forwards ease-in-out;
+}
+
+.instagram-logo-inner-square {
+  width: 0;
+  height: 0;
+  border: 0px solid white;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: inner-square-animate 1.5s forwards ease-in-out 0.5s;
+}
+
+.instagram-logo-circle {
+  width: 0;
+  height: 0;
+  border: 0px solid white;
+  border-radius: 50%;
+  position: absolute;
+
+  animation: circle-animate 1s forwards ease-in-out 1.5s;
+}
+
+.instagram-logo-dot {
+  width: 0;
+  height: 0;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+
+  animation: dot-animate 0.8s forwards ease-in-out 2s;
+}
+
+@keyframes container-animate {
+  0% {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fdf497;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    border-radius: 35px;
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes inner-square-animate {
+  0% {
+    width: 0;
+    height: 0;
+    border: 0px solid white;
+    border-radius: 50%;
+  }
+  50% {
+    width: 110px;
+    height: 110px;
+    border: 10px solid white;
+    border-radius: 50%;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    border: 10px solid white;
+    border-radius: 30px;
+  }
+}
+
+@keyframes circle-animate {
+  0% {
+    width: 0;
+    height: 0;
+    border: 0px solid white;
+    opacity: 0;
+  }
+  100% {
+    width: 40px;
+    height: 40px;
+    border: 10px solid white;
+    opacity: 1;
+  }
+}
+
+@keyframes dot-animate {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+  100% {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    top: 10px;
+    right: 10px;
+    transform: translate(0, 0);
+  }
+}
